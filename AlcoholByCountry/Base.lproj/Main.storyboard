@@ -30,10 +30,11 @@
                             <constraint firstItem="x9W-0h-ApI" firstAttribute="centerY" secondItem="P4D-MJ-Hmr" secondAttribute="centerY" id="aZV-fZ-oBH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="XAR-G5-B0G"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1kz-EA-PpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="553" y="-348"/>
+            <point key="canvasLocation" x="1563" y="-348"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="bPQ-0G-ZKq">
@@ -60,6 +61,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="jcx-nn-cld" kind="showDetail" id="Klb-nP-mSv"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -89,19 +93,40 @@
             </objects>
             <point key="canvasLocation" x="556" y="-1009"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Global Split View Controller-->
         <scene sceneID="jlc-8I-MIe">
             <objects>
-                <splitViewController id="xxb-K2-h9e" sceneMemberID="viewController">
+                <splitViewController id="xxb-K2-h9e" customClass="GlobalSplitViewController" customModule="AlcoholByCountry" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="MUi-gR-aYO" kind="relationship" relationship="masterViewController" id="YOr-ZJ-KVX"/>
-                        <segue destination="i3I-0l-wgK" kind="relationship" relationship="detailViewController" id="1za-rI-MQv"/>
+                        <segue destination="jcx-nn-cld" kind="relationship" relationship="detailViewController" id="1za-rI-MQv"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rby-ex-T1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-262" y="-679"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dNx-3z-hWq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jcx-nn-cld" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="V0P-Iu-XSJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="i3I-0l-wgK" kind="relationship" relationship="rootViewController" id="8ov-aL-tGr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fFL-XH-SVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="845" y="-348"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="1za-rI-MQv"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.29692619920000002" green="0.35723142029999999" blue="0.73521526270000004" alpha="0.80350215520000001" colorSpace="calibratedRGB"/>
 </document>
