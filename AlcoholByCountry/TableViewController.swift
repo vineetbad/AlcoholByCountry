@@ -264,13 +264,19 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                
-                let countryFirst = country[indexPath.row]
-                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
-                controller.country = countryFirst
-                delay(0.01){
-                    self.searchController.active = false
+                if self.searchController.active
+                {
+                    let countryFirst = filteredCountry[indexPath.row]
+                    let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
+                    controller.country = countryFirst
                 }
+                else
+                {
+                    let countryFirst = country[indexPath.row]
+                    let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
+                    controller.country = countryFirst
+                }
+                    self.searchController.active = false
             }
         }
     }
