@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6CAE23591CB3271300388B1D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAE23581CB3271300388B1D /* TableViewController.swift */; };
 		6CAE235B1CB3690E00388B1D /* GlobalSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAE235A1CB3690E00388B1D /* GlobalSplitViewController.swift */; };
+		6CAE235D1CB36B9F00388B1D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAE235C1CB36B9F00388B1D /* DetailViewController.swift */; };
 		6CB8B9631CAB8CE800546D46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB8B9621CAB8CE800546D46 /* AppDelegate.swift */; };
 		6CB8B9681CAB8CE800546D46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CB8B9661CAB8CE800546D46 /* Main.storyboard */; };
 		6CB8B96B1CAB8CE800546D46 /* AlcoholByCountry.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6CB8B9691CAB8CE800546D46 /* AlcoholByCountry.xcdatamodeld */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		6CAE23581CB3271300388B1D /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		6CAE235A1CB3690E00388B1D /* GlobalSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalSplitViewController.swift; sourceTree = "<group>"; };
+		6CAE235C1CB36B9F00388B1D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6CB8B95F1CAB8CE800546D46 /* AlcoholByCountry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlcoholByCountry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CB8B9621CAB8CE800546D46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CB8B9671CAB8CE800546D46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				6CB8B9621CAB8CE800546D46 /* AppDelegate.swift */,
 				6CAE23581CB3271300388B1D /* TableViewController.swift */,
 				6CAE235A1CB3690E00388B1D /* GlobalSplitViewController.swift */,
+				6CAE235C1CB36B9F00388B1D /* DetailViewController.swift */,
 				6CB8B9661CAB8CE800546D46 /* Main.storyboard */,
 				6CB8B96C1CAB8CE800546D46 /* Assets.xcassets */,
 				6CB8B96E1CAB8CE800546D46 /* LaunchScreen.storyboard */,
@@ -264,6 +267,7 @@
 			files = (
 				6CB8B9631CAB8CE800546D46 /* AppDelegate.swift in Sources */,
 				6CAE23591CB3271300388B1D /* TableViewController.swift in Sources */,
+				6CAE235D1CB36B9F00388B1D /* DetailViewController.swift in Sources */,
 				6CAE235B1CB3690E00388B1D /* GlobalSplitViewController.swift in Sources */,
 				6CB8B96B1CAB8CE800546D46 /* AlcoholByCountry.xcdatamodeld in Sources */,
 			);
