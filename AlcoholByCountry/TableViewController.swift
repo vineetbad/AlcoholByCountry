@@ -8,8 +8,9 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
-
+class TableViewController: UITableViewController, UISearchResultsUpdating {
+    
+    
     var country : [String] = [
         "Afghanistan",
         "Albania",
@@ -193,11 +194,27 @@ class TableViewController: UITableViewController {
         "Zimbabwe"]
     
     
+    //search
+    var filteredCountry = [String]()
+    var searchController = UISearchController()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Alcohol Laws By Country"
+        
+        //search
+        self.searchController = UISearchController(searchResultsController: nil)
+        self.searchController.searchResultsUpdater = self
+        self.searchController.dimsBackgroundDuringPresentation = false
+        self.searchController.searchBar.sizeToFit()
+        self.tableView.tableHeaderView = self.searchController.searchBar
+        self.tableView.reloadData()
+        
+        //search - END
+        
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -220,14 +237,24 @@ class TableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return country.count
+        if self.searchController.active {
+            return filteredCountry.count
+        }
+        else {
+            return country.count
+        }
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Country", forIndexPath: indexPath)
-        
-        cell.textLabel?.text = country[indexPath.row]
+        if self.searchController.active
+        {
+            cell.textLabel?.text = filteredCountry[indexPath.row]
+        }
+        else {
+            cell.textLabel?.text = country[indexPath.row]
+        }
 
 
 
@@ -289,5 +316,17 @@ class TableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        self.filteredCountry.removeAll(keepCapacity: false)
+        let searchPredicate = NSPredicate(format: "SELF CONTAINS [c] %@", searchController.searchBar.text!)
+        let array = (self.country as NSArray).filteredArrayUsingPredicate(searchPredicate)
+        self.filteredCountry = array as! [String]
+        self.tableView.reloadData()
+    }
 
 }
+
+
+
+
