@@ -264,9 +264,13 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
+                
                 let countryFirst = country[indexPath.row]
                 let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
                 controller.country = countryFirst
+                delay(0.01){
+                    self.searchController.active = false
+                }
             }
         }
     }
@@ -324,6 +328,16 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         self.filteredCountry = array as! [String]
         self.tableView.reloadData()
     }
+    
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
+
 
 }
 
