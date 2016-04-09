@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class DetailViewController: UIViewController {
     var country : String = ""
     
+    @IBOutlet var bannerView: GADBannerView!
     @IBOutlet var notes: UILabel!
     @IBOutlet var purchasingAge: UILabel!
     @IBOutlet var drinkingAge: UILabel!
@@ -21,6 +23,13 @@ class DetailViewController: UIViewController {
         drinkingAge.text! = countryDictionary[country]![0]
         purchasingAge.text! = countryDictionary[country]![1]
         notes.text! = countryDictionary[country]![2]
+        
+        self.bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        self.bannerView.rootViewController = self
+        let request : GADRequest = GADRequest()
+        self.bannerView.loadRequest(request)
+        
+        
 
     }
     
